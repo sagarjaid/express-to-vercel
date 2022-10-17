@@ -1,16 +1,16 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require("cors");
 
-app.use(express.static('public'))
+const router = require('./routes/index');
 
-app.get('/', (req, res) => res.send('Home Page Route'));
+app.use(express.static('public'));
+app.use(cors());
+app.use(express.urlencoded( {extended: true }));
+app.use(express.json());
 
-app.get('/about', (req, res) => res.json({about: 'About Page Route'}));
-
-app.get('/portfolio', (req, res) => res.send('Portfolio Page Route'));
-
-app.get('/contact', (req, res) => res.send('Contact Page Route'));
+app.use(`/api`, router);
 
 const port = process.env.PORT || 3000;
 
