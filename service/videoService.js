@@ -10,13 +10,11 @@ const instagramGetUrl = require("../config/instagramGetUrl");
 
 const videoService = async (req, res)=>{
 
-    // const videoUrl =  JSON.parse(req.query.url);
+    const videoUrl =  req.query.url
 
-    // console.log(videoUrl);
+    console.log(videoUrl);
 
-    // console.log(typeof videoUrl);
-
-    const videoUrl = "https://www.instagram.com/reel/Cjn5qtTOTdH/"
+    // const videoUrl = "https://www.instagram.com/reel/Cjn5qtTOTdH/"
     
     try {
         const igvideoUrl = await instagramGetUrl(videoUrl)
