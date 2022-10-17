@@ -1,6 +1,6 @@
-const axios = require("axios"), 
-cheerio = require("cheerio"), 
-qs = require('qs')
+const axios = require("axios");
+// cheerio = require("cheerio"), 
+// qs = require('qs');
 
 module.exports = instagramGetUrl = (url_media) =>{
     return new Promise(async (resolve,reject)=>{
