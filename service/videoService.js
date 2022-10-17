@@ -14,10 +14,13 @@ const videoService = async (req, res)=>{
 
     const videoUrl = "https://www.instagram.com/reel/Ci8N8rEDQvL/"
     
-    const igvideoUrl = await instagramGetUrl(videoUrl)
+    try {
+        const igvideoUrl = await instagramGetUrl(videoUrl)
     console.log(igvideoUrl, "igvideoUrl");
     res.status(200).json(igvideoUrl)
-
+    } catch (error) {
+        res.send(error)
+    }
 //     const igReelUrl = igvideoUrl.url_list[0]
 
 //     console.log(igReelUrl, "igReelUrl");
