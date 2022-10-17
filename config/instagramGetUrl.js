@@ -1,4 +1,6 @@
-const axios = require("axios")
+const axios = require("axios"), 
+cheerio = require("cheerio"), 
+qs = require('qs')
 
 module.exports = instagramGetUrl = (url_media) =>{
     return new Promise(async (resolve,reject)=>{
@@ -32,7 +34,6 @@ module.exports = instagramGetUrl = (url_media) =>{
         axios(config).then(function (response) {
 
             let result = response.data, ig = [];
-            log
 
              if(result.data.type === "GraphSidecar"){
                 result.data.items.forEach(item=>{
