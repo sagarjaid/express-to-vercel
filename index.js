@@ -6,7 +6,7 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => res.send('Home Page Route'));
 
-app.get('/about', (req, res) => res.send('About Page Route'));
+app.get('/about', (req, res) => res.json({about: 'About Page Route'}));
 
 app.get('/portfolio', (req, res) => res.send('Portfolio Page Route'));
 
